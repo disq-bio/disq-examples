@@ -7,11 +7,11 @@
     <version>9</version>
   </parent>
   <groupId>org.disq-bio</groupId>
-  <artifactId>disq-examples_2.12</artifactId>
+  <artifactId>disq-examples_2.11</artifactId>
   <version>0.3.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
-  <name>disq-examples_2.12</name>
+  <name>disq-examples_2.11</name>
   <description>Examples for the Disq library.</description>
   <url>http://github.com/disq-bio/disq-examples</url>
   <inceptionYear>2015</inceptionYear>
@@ -40,8 +40,8 @@
   </developers>
   <properties>
     <disq.version>0.3.2-SNAPSHOT</disq.version>
-    <scala.version>2.12.8</scala.version>
-    <scala.artifact.suffix>2.12</scala.artifact.suffix>
+    <scala.version>2.11.12</scala.version>
+    <scala.artifact.suffix>2.11</scala.artifact.suffix>
     <spark.version>2.4.3</spark.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.targetEncoding>UTF-8</project.build.targetEncoding>
