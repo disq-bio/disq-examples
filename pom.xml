@@ -14,7 +14,7 @@
   <name>disq-examples_2.11</name>
   <description>Examples for the Disq library.</description>
   <url>http://github.com/disq-bio/disq-examples</url>
-  <inceptionYear>2015</inceptionYear>
+  <inceptionYear>2019</inceptionYear>
   <scm>
     <connection>scm:git:https://github.com/disq-bio/disq-examples</connection>
     <developerConnection>scm:git:https://github.com/disq-bio/disq-examples</developerConnection>
