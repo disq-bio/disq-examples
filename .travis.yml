@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjdk
+  - openjdk8
 script: ./scripts/travis.sh
 cache:
   directories:
