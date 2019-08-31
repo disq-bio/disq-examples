@@ -5,6 +5,19 @@ Examples for the [Disq](https://github.com/disq-bio/disq) library.
 [![Build Status](https://travis-ci.org/disq-bio/disq-examples.svg?branch=master)](https://travis-ci.org/disq-bio/disq-examples)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## Building disq-examples
+
+Install
+
+ * JDK 1.8 or later, http://openjdk.java.net
+ * Apache Maven 3.3.9 or later, http://maven.apache.org
+
+To build
+
+```bash
+$ mvn install
+```
+
 ## Java examples
 
 The [`disq-examples-java`](https://github.com/disq-bio/disq-examples/tree/master/java/src/main/java/org/disq_bio/disq/examples/java)
@@ -24,12 +37,12 @@ SparkConf conf = new SparkConf()
 JavaSparkContext jsc = new JavaSparkContext(new SparkContext(conf));
 ```
 
-Then an [`JavaRDD`](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.api.java.JavaRDD) is read using the
+Then a [`JavaRDD`](https://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.api.java.JavaRDD) is read using the
 [Disq APIs](https://www.javadoc.io/doc/org.disq-bio/disq)
 
 ```java
 HtsjdkReadsRddStorage htsjdkReadsRddStorage = HtsjdkReadsRddStorage.makeDefault(jsc);
-HtsjdkReadsRdd htsjdkReadsRdd = htsjdkReadsRddStorage.read(args[0]);
+HtsjdkReadsRdd htsjdkReadsRdd = htsjdkReadsRddStorage.read(filePath);
 
 JavaRDD<SAMRecord> reads = htsjdkReadsRdd.getReads();
 ```
@@ -78,7 +91,7 @@ Then an [`RDD`](https://spark.apache.org/docs/latest/api/scala/index.html#org.ap
 
 ```scala
 val htsjdkReadsRddStorage: HtsjdkReadsRddStorage = HtsjdkReadsRddStorage.makeDefault(sc);
-val htsjdkReadsRdd: HtsjdkReadsRdd = htsjdkReadsRddStorage.read(args(0));
+val htsjdkReadsRdd: HtsjdkReadsRdd = htsjdkReadsRddStorage.read(filePath);
 
 val reads: RDD[SAMRecord] = htsjdkReadsRdd.getReads();
 ```
