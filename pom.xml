@@ -8,7 +8,7 @@
   </parent>
   <groupId>org.disq-bio</groupId>
   <artifactId>disq-examples_2.11</artifactId>
-  <version>0.3.4-SNAPSHOT</version>
+  <version>0.3.6-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>disq-examples_2.11</name>
@@ -39,7 +39,7 @@
     </developer>
   </developers>
   <properties>
-    <disq.version>0.3.4-SNAPSHOT</disq.version>
+    <disq.version>0.3.6-SNAPSHOT</disq.version>
     <scala.version>2.11.12</scala.version>
     <scala.artifact.suffix>2.11</scala.artifact.suffix>
     <spark.version>2.4.3</spark.version>
