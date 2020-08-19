@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.disq-bio</groupId>
-    <artifactId>disq-examples_2.11</artifactId>
+    <artifactId>disq-examples_2.12</artifactId>
     <version>0.3.7-SNAPSHOT</version>
   </parent>
-  <artifactId>disq-examples-java_2.11</artifactId>
+  <artifactId>disq-examples-java_2.12</artifactId>
   <packaging>jar</packaging>
 
-  <name>disq-examples-java_2.11</name>
+  <name>disq-examples-java_2.12</name>
   <description>Disq examples implemented in Java.</description>
 
   <build>

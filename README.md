@@ -58,7 +58,7 @@ These examples can be run on the command line via `spark-submit`, e.g.
 $ spark-submit \
     --packages org.disq-bio:disq:${disq.version} \
     --class org.disq_bio.disq.examples.java.JavaCountAlignments \
-    disq-examples-java_2.11-${disq.version}.jar \
+    disq-examples-java_2.12-${disq.version}.jar \
     sample.bam
 
 (unmapped,30)
@@ -107,45 +107,10 @@ These examples can be run on the command line via `spark-submit`, e.g.
 $ spark-submit \
     --packages org.disq-bio:disq:${disq.version} \
     --class org.disq_bio.disq.examples.scala.ScalaCountAlignments \
-    disq-examples-scala_2.11-${disq.version}.jar \
+    disq-examples-scala_2.12-${disq.version}.jar \
     sample.bam
 
 (unmapped,30)
 (1,4887)
 ```
 
-### Building for multiple Scala versions
-
-The `disq-examples-scala` module allows for building for multiple Scala versions, currently
-Scala 2.11 and Scala 2.12.
-
-[Build scripts](https://github.com/disq-bio/disq-examples/tree/master/scripts) are provided to modify `pom.xml` in place.
-
-```bash
-$ ./scripts/move_to_scala_2.12.sh
-$ mvn clean install
-...
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary for disq-examples_2.11 ${disq.version}:
-[INFO]
-[INFO] disq-examples_2.11 ................................. SUCCESS [  0.775 s]
-[INFO] disq-examples-java_2.11 ............................ SUCCESS [  3.276 s]
-[INFO] disq-examples-scala_2.11 ........................... SUCCESS [ 17.169 s]
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-
-
-$ ./scripts/move_to_scala_2.12.sh
-$ mvn clean install
-...
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary for disq-examples_2.12 ${disq.version}:
-[INFO]
-[INFO] disq-examples_2.12 ................................. SUCCESS [  0.889 s]
-[INFO] disq-examples-java_2.12 ............................ SUCCESS [  3.840 s]
-[INFO] disq-examples-scala_2.12 ........................... SUCCESS [ 17.821 s]
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-```
