@@ -39,7 +39,7 @@
     </developer>
   </developers>
   <properties>
-    <disq.version>0.3.7</disq.version>
+    <disq.version>0.3.8-SNAPSHOT</disq.version>
     <scala.version>2.12.10</scala.version>
     <scala.artifact.suffix>2.12</scala.artifact.suffix>
     <spark.version>3.0.1</spark.version>
