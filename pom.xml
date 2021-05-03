@@ -35,14 +35,14 @@
   <developers>
     <developer>
       <id>heuermh</id>
-      <name>Michael Heuer</name>
+      <name>Michael L Heuer</name>
     </developer>
   </developers>
   <properties>
-    <disq.version>0.3.8-SNAPSHOT</disq.version>
+    <disq.version>0.3.8</disq.version>
     <scala.version>2.12.10</scala.version>
     <scala.artifact.suffix>2.12</scala.artifact.suffix>
-    <spark.version>3.0.1</spark.version>
+    <spark.version>3.0.2</spark.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.targetEncoding>UTF-8</project.build.targetEncoding>
     <maven.enforcer.maven-version>[3.3.1,)</maven.enforcer.maven-version>
@@ -81,6 +81,12 @@
             <execution>
               <id>attach-scaladocs</id>
               <phase>verify</phase>
+              <goals>
+                <goal>doc-jar</goal>
+              </goals>
+            </execution>
+            <execution>
+              <id>attach-javadocs</id>
               <goals>
                 <goal>doc-jar</goal>
               </goals>
@@ -225,6 +231,37 @@
           <version>3.0.0-M5</version>
         </plugin>
         <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>3.0.0</version>
+          <executions>
+            <execution>
+              <id>add-source</id>
+              <phase>generate-sources</phase>
+              <goals>
+                <goal>add-source</goal>
+              </goals>
+              <configuration>
+                <sources>
+                  <source>src/main/scala</source>
+                </sources>
+              </configuration>
+            </execution>
+            <execution>
+              <id>add-test-source</id>
+              <phase>generate-test-sources</phase>
+              <goals>
+                <goal>add-test-source</goal>
+              </goals>
+              <configuration>
+                <sources>
+                  <source>src/test/scala</source>
+                </sources>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
           <groupId>org.scalatest</groupId>
           <artifactId>scalatest-maven-plugin</artifactId>
           <version>2.0.0</version>
@@ -251,23 +288,13 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.13.1</version>
+        <version>4.13.2</version>
       </dependency>
       <dependency>
         <groupId>org.apache.spark</groupId>
         <artifactId>spark-core_${scala.artifact.suffix}</artifactId>
         <version>${spark.version}</version>
         <exclusions>
-          <!--
-          <exclusion>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-client</artifactId>
-          </exclusion>
-          <exclusion>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce</artifactId>
-          </exclusion>
-          -->
           <exclusion>
             <groupId>org.slf4j</groupId>
             <artifactId>*</artifactId>
